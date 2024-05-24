@@ -1,6 +1,10 @@
+// Definir una lista de códigos predefinidos
+var codigos = ['123456', '234567', '345678', '456789', '567890', '678901'];
+
 document.getElementById('generar').addEventListener('click', function() {
-    var codigo = Math.floor(100000 + Math.random() * 900000);
-    document.getElementById('codigo').value = codigo;
+    // Seleccionar un código aleatorio de la lista
+    var codigoSeleccionado = codigos[Math.floor(Math.random() * codigos.length)];
+    document.getElementById('codigo').value = codigoSeleccionado;
 });
 
 document.getElementById('copiar').addEventListener('click', function() {
@@ -10,3 +14,5 @@ document.getElementById('copiar').addEventListener('click', function() {
     document.execCommand('copy');
     alert('Código copiado: ' + codigo.value);
 });
+
+
